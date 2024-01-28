@@ -14,6 +14,18 @@ class Graph:
   def get_vertex(self,name):
     return self.graph_dict[name]
 
+  def get_interest(self,name):
+    return self.graph_dict[name].interest
+
+  def get_edges(self, name):
+    return list(self.graph_dict[name].edges.keys())
+
+  def get_edge_weight(self, name, edge): 
+    return self.graph_dict[name].edges[edge]
+  
+  def get_return_time(self, name):
+    return self.graph_dict[name].return_time
+
   def find_path(self, start_vertex, end_vertex):
     start = [start_vertex]
     seen = {}
